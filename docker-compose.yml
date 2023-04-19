@@ -19,7 +19,7 @@ services:
       - ./steve_init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./db_data/:/var/lib/mysql
     networks:
-      - db-network
+      - steve-db-network
 
 #Docker Networks
 networks:
