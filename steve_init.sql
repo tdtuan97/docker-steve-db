@@ -15,11 +15,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for stevedb
-CREATE DATABASE IF NOT EXISTS `stevedb` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
-USE `stevedb`;
+-- Dumping database structure for steve_db
+CREATE DATABASE IF NOT EXISTS `steve_db` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
+USE `steve_db`;
 
--- Dumping structure for table stevedb.address
+-- Dumping structure for table steve_db.address
 CREATE TABLE IF NOT EXISTS `address` (
   `address_pk` int(11) NOT NULL AUTO_INCREMENT,
   `street` varchar(1000) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `address` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.charge_box
+-- Dumping structure for table steve_db.charge_box
 CREATE TABLE IF NOT EXISTS `charge_box` (
   `charge_box_pk` int(11) NOT NULL AUTO_INCREMENT,
   `charge_box_id` varchar(255) NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `charge_box` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.charging_profile
+-- Dumping structure for table steve_db.charging_profile
 CREATE TABLE IF NOT EXISTS `charging_profile` (
   `charging_profile_pk` int(11) NOT NULL AUTO_INCREMENT,
   `stack_level` int(11) NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `charging_profile` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.charging_schedule_period
+-- Dumping structure for table steve_db.charging_schedule_period
 CREATE TABLE IF NOT EXISTS `charging_schedule_period` (
   `charging_profile_pk` int(11) NOT NULL,
   `start_period_in_seconds` int(11) NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `charging_schedule_period` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.connector
+-- Dumping structure for table steve_db.connector
 CREATE TABLE IF NOT EXISTS `connector` (
   `connector_pk` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `charge_box_id` varchar(255) NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `connector` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.connector_charging_profile
+-- Dumping structure for table steve_db.connector_charging_profile
 CREATE TABLE IF NOT EXISTS `connector_charging_profile` (
   `connector_pk` int(11) unsigned NOT NULL,
   `charging_profile_pk` int(11) NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `connector_charging_profile` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.connector_meter_value
+-- Dumping structure for table steve_db.connector_meter_value
 CREATE TABLE IF NOT EXISTS `connector_meter_value` (
   `connector_pk` int(11) unsigned NOT NULL,
   `transaction_pk` int(10) unsigned DEFAULT NULL,
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `connector_meter_value` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.connector_status
+-- Dumping structure for table steve_db.connector_status
 CREATE TABLE IF NOT EXISTS `connector_status` (
   `connector_pk` int(11) unsigned NOT NULL,
   `status_timestamp` timestamp(6) NULL DEFAULT NULL,
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `connector_status` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.ocpp_tag
+-- Dumping structure for table steve_db.ocpp_tag
 CREATE TABLE IF NOT EXISTS `ocpp_tag` (
   `ocpp_tag_pk` int(11) NOT NULL AUTO_INCREMENT,
   `id_tag` varchar(255) NOT NULL,
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `ocpp_tag` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for view stevedb.ocpp_tag_activity
+-- Dumping structure for view steve_db.ocpp_tag_activity
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `ocpp_tag_activity` (
 	`ocpp_tag_pk` INT(11) NOT NULL,
@@ -194,7 +194,7 @@ CREATE TABLE `ocpp_tag_activity` (
 	`blocked` INT(1) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for table stevedb.reservation
+-- Dumping structure for table steve_db.reservation
 CREATE TABLE IF NOT EXISTS `reservation` (
   `reservation_pk` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `connector_pk` int(11) unsigned NOT NULL,
@@ -218,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `reservation` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.schema_version
+-- Dumping structure for table steve_db.schema_version
 CREATE TABLE IF NOT EXISTS `schema_version` (
   `installed_rank` int(11) NOT NULL,
   `version` varchar(50) DEFAULT NULL,
@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `schema_version` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.settings
+-- Dumping structure for table steve_db.settings
 CREATE TABLE IF NOT EXISTS `settings` (
   `app_id` varchar(40) NOT NULL,
   `heartbeat_interval_in_seconds` int(11) DEFAULT NULL,
@@ -256,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for view stevedb.transaction
+-- Dumping structure for view steve_db.transaction
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `transaction` (
 	`transaction_pk` INT(10) UNSIGNED NOT NULL,
@@ -272,7 +272,7 @@ CREATE TABLE `transaction` (
 	`stop_reason` VARCHAR(255) NULL COLLATE 'latin1_swedish_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for table stevedb.transaction_start
+-- Dumping structure for table steve_db.transaction_start
 CREATE TABLE IF NOT EXISTS `transaction_start` (
   `transaction_pk` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `event_timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
@@ -291,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `transaction_start` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.transaction_stop
+-- Dumping structure for table steve_db.transaction_stop
 CREATE TABLE IF NOT EXISTS `transaction_stop` (
   `transaction_pk` int(10) unsigned NOT NULL,
   `event_timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
@@ -305,7 +305,7 @@ CREATE TABLE IF NOT EXISTS `transaction_stop` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.transaction_stop_failed
+-- Dumping structure for table steve_db.transaction_stop_failed
 CREATE TABLE IF NOT EXISTS `transaction_stop_failed` (
   `transaction_pk` int(11) DEFAULT NULL,
   `event_timestamp` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
@@ -318,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `transaction_stop_failed` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table stevedb.user
+-- Dumping structure for table steve_db.user
 CREATE TABLE IF NOT EXISTS `user` (
   `user_pk` int(11) NOT NULL AUTO_INCREMENT,
   `ocpp_tag_pk` int(11) DEFAULT NULL,
@@ -339,12 +339,12 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for view stevedb.ocpp_tag_activity
+-- Dumping structure for view steve_db.ocpp_tag_activity
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `ocpp_tag_activity`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `ocpp_tag_activity` AS select `ocpp_tag`.`ocpp_tag_pk` AS `ocpp_tag_pk`,`ocpp_tag`.`id_tag` AS `id_tag`,`ocpp_tag`.`parent_id_tag` AS `parent_id_tag`,`ocpp_tag`.`expiry_date` AS `expiry_date`,`ocpp_tag`.`max_active_transaction_count` AS `max_active_transaction_count`,`ocpp_tag`.`note` AS `note`,coalesce(`tx_activity`.`active_transaction_count`,0) AS `active_transaction_count`,case when `tx_activity`.`active_transaction_count` > 0 then 1 else 0 end AS `in_transaction`,case when `ocpp_tag`.`max_active_transaction_count` = 0 then 1 else 0 end AS `blocked` from (`ocpp_tag` left join (select `transaction`.`id_tag` AS `id_tag`,count(`transaction`.`id_tag`) AS `active_transaction_count` from `transaction` where `transaction`.`stop_timestamp` is null and `transaction`.`stop_value` is null group by `transaction`.`id_tag`) `tx_activity` on(`ocpp_tag`.`id_tag` = `tx_activity`.`id_tag`));
 
--- Dumping structure for view stevedb.transaction
+-- Dumping structure for view steve_db.transaction
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `transaction`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `transaction` AS select `tx1`.`transaction_pk` AS `transaction_pk`,`tx1`.`connector_pk` AS `connector_pk`,`tx1`.`id_tag` AS `id_tag`,`tx1`.`event_timestamp` AS `start_event_timestamp`,`tx1`.`start_timestamp` AS `start_timestamp`,`tx1`.`start_value` AS `start_value`,`tx2`.`event_actor` AS `stop_event_actor`,`tx2`.`event_timestamp` AS `stop_event_timestamp`,`tx2`.`stop_timestamp` AS `stop_timestamp`,`tx2`.`stop_value` AS `stop_value`,`tx2`.`stop_reason` AS `stop_reason` from (`transaction_start` `tx1` left join (select `s1`.`transaction_pk` AS `transaction_pk`,`s1`.`event_timestamp` AS `event_timestamp`,`s1`.`event_actor` AS `event_actor`,`s1`.`stop_timestamp` AS `stop_timestamp`,`s1`.`stop_value` AS `stop_value`,`s1`.`stop_reason` AS `stop_reason` from `transaction_stop` `s1` where `s1`.`event_timestamp` = (select max(`s2`.`event_timestamp`) from `transaction_stop` `s2` where `s1`.`transaction_pk` = `s2`.`transaction_pk`) group by `s1`.`transaction_pk`,`s1`.`event_timestamp`) `tx2` on(`tx1`.`transaction_pk` = `tx2`.`transaction_pk`));
