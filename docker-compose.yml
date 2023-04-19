@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mariadb:
+    image: mariadb:10.4
+    container_name: mysql
+    command: mysqld --sql_mode=""
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: echarge
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: 28P11*4mG@3M
+      MYSQL_USER: echarge
+      MYSQL_PASSWORD: echarge@123
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./steve_init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db_data/:/var/lib/mysql
+    networks:
+      - db-network
+
+#Docker Networks
+networks:
+  db-network:
