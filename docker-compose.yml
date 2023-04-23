@@ -9,7 +9,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: steve_db
+      MYSQL_DATABASE: stevedb
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: 28P11*4mG@3M
       MYSQL_USER: echarge
