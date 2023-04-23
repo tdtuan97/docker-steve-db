@@ -233,8 +233,46 @@ CREATE TABLE IF NOT EXISTS `schema_version` (
   PRIMARY KEY (`installed_rank`),
   KEY `schema_version_s_idx` (`success`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+INSERT INTO stevedb.schema_version (installed_rank,version,description,`type`,script,checksum,installed_by,installed_on,execution_time,success) VALUES
+                                                                                                                                                  (1,'0.6.6','inital','SQL','V0_6_6__inital.sql',-1139003720,'steve','2023-04-06 12:40:06',58,1),
+                                                                                                                                                  (2,'0.6.7','update','SQL','V0_6_7__update.sql',-1516276887,'steve','2023-04-06 12:40:06',7,1),
+                                                                                                                                                  (3,'0.6.8','update','SQL','V0_6_8__update.sql',1153526272,'steve','2023-04-06 12:40:06',5,1),
+                                                                                                                                                  (4,'0.6.9','update','SQL','V0_6_9__update.sql',684651776,'steve','2023-04-06 12:40:06',15,1),
+                                                                                                                                                  (5,'0.7.0','update','SQL','V0_7_0__update.sql',-1304612786,'steve','2023-04-06 12:40:06',37,1),
+                                                                                                                                                  (6,'0.7.1','update','SQL','V0_7_1__update.sql',2010441416,'steve','2023-04-06 12:40:06',7,1),
+                                                                                                                                                  (7,'0.7.2','update','SQL','V0_7_2__update.sql',1942726372,'steve','2023-04-06 12:40:06',5,1),
+                                                                                                                                                  (8,'0.7.3','update','SQL','V0_7_3__update.sql',-914877656,'steve','2023-04-06 12:40:06',4,1),
+                                                                                                                                                  (9,'0.7.6','update','SQL','V0_7_6__update.sql',1847569673,'steve','2023-04-06 12:40:06',6,1),
+                                                                                                                                                  (10,'0.7.7','update','SQL','V0_7_7__update.sql',-1987713944,'steve','2023-04-06 12:40:07',84,1);
+INSERT INTO stevedb.schema_version (installed_rank,version,description,`type`,script,checksum,installed_by,installed_on,execution_time,success) VALUES
+                                                                                                                                                  (11,'0.7.8','update','SQL','V0_7_8__update.sql',1734849553,'steve','2023-04-06 12:40:07',6,1),
+                                                                                                                                                  (12,'0.7.9','update','SQL','V0_7_9__update.sql',-1187991930,'steve','2023-04-06 12:40:07',85,1),
+                                                                                                                                                  (13,'0.8.0','update','SQL','V0_8_0__update.sql',-463816886,'steve','2023-04-06 12:40:07',30,1),
+                                                                                                                                                  (14,'0.8.1','update','SQL','V0_8_1__update.sql',1213582250,'steve','2023-04-06 12:40:07',107,1),
+                                                                                                                                                  (15,'0.8.2','update','SQL','V0_8_2__update.sql',-1417404311,'steve','2023-04-06 12:40:07',4,1),
+                                                                                                                                                  (16,'0.8.4','update','SQL','V0_8_4__update.sql',-1620751535,'steve','2023-04-06 12:40:07',74,1),
+                                                                                                                                                  (17,'0.8.5','update','SQL','V0_8_5__update.sql',-1961223140,'steve','2023-04-06 12:40:07',44,1),
+                                                                                                                                                  (18,'0.8.6','update','SQL','V0_8_6__update.sql',-599908031,'steve','2023-04-06 12:40:07',184,1),
+                                                                                                                                                  (19,'0.8.7','update','SQL','V0_8_7__update.sql',817528938,'steve','2023-04-06 12:40:07',7,1),
+                                                                                                                                                  (20,'0.8.8','update','SQL','V0_8_8__update.sql',-1218381409,'steve','2023-04-06 12:40:07',3,1);
+INSERT INTO stevedb.schema_version (installed_rank,version,description,`type`,script,checksum,installed_by,installed_on,execution_time,success) VALUES
+                                                                                                                                                  (21,'0.8.9','update','SQL','V0_8_9__update.sql',467917572,'steve','2023-04-06 12:40:07',5,1),
+                                                                                                                                                  (22,'0.9.0','update','SQL','V0_9_0__update.sql',-156261502,'steve','2023-04-06 12:40:07',37,1),
+                                                                                                                                                  (23,'0.9.1','update','SQL','V0_9_1__update.sql',554940430,'steve','2023-04-06 12:40:07',4,1),
+                                                                                                                                                  (24,'0.9.2','update','SQL','V0_9_2__update.sql',-1162599634,'steve','2023-04-06 12:40:07',5,1),
+                                                                                                                                                  (25,'0.9.3','update','SQL','V0_9_3__update.sql',967813954,'steve','2023-04-06 12:40:07',2,1),
+                                                                                                                                                  (26,'0.9.4','update','SQL','V0_9_4__update.sql',1698316188,'steve','2023-04-06 12:40:07',2,1),
+                                                                                                                                                  (27,'0.9.5','update','SQL','V0_9_5__update.sql',-1980845887,'steve','2023-04-06 12:40:07',3,1),
+                                                                                                                                                  (28,'0.9.6','update','SQL','V0_9_6__update.sql',-619431009,'steve','2023-04-06 12:40:07',50,1),
+                                                                                                                                                  (29,'0.9.7','update','SQL','V0_9_7__update.sql',-1352017997,'steve','2023-04-06 12:40:07',6,1),
+                                                                                                                                                  (30,'0.9.8','update','SQL','V0_9_8__update.sql',1465629204,'steve','2023-04-06 12:40:07',29,1);
+INSERT INTO stevedb.schema_version (installed_rank,version,description,`type`,script,checksum,installed_by,installed_on,execution_time,success) VALUES
+                                                                                                                                                  (31,'0.9.9','update','SQL','V0_9_9__update.sql',1154327139,'steve','2023-04-06 12:40:07',8,1),
+                                                                                                                                                  (32,'1.0.0','update','SQL','V1_0_0__update.sql',-589444344,'steve','2023-04-06 12:40:07',4,1),
+                                                                                                                                                  (33,'1.0.1','update','SQL','V1_0_1__update.sql',-1119099309,'steve','2023-04-06 12:40:07',14,1),
+                                                                                                                                                  (34,'1.0.2','update','SQL','V1_0_2__update.sql',1724842041,'steve','2023-04-06 12:40:07',5,1),
+                                                                                                                                                  (35,'1.0.3','update','SQL','V1_0_3__update.sql',1680705266,'steve','2023-04-06 12:40:07',4,1);
 
--- Data exporting was unselected.
 
 -- Dumping structure for table stevedb.settings
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -253,8 +291,8 @@ CREATE TABLE IF NOT EXISTS `settings` (
   PRIMARY KEY (`app_id`),
   UNIQUE KEY `settings_id_UNIQUE` (`app_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- Data exporting was unselected.
+INSERT INTO stevedb.settings (app_id,heartbeat_interval_in_seconds,hours_to_expire,mail_enabled,mail_host,mail_username,mail_password,mail_from,mail_protocol,mail_port,mail_recipients,notification_features) VALUES
+  ('U3RlY2tkb3NlblZlcndhbHR1bmc=',14400,1,0,NULL,NULL,NULL,NULL,'smtp',25,NULL,NULL);
 
 -- Dumping structure for view stevedb.transaction
 -- Creating temporary table to overcome VIEW dependency errors
