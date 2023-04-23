@@ -16,7 +16,7 @@ services:
       MYSQL_PASSWORD: echarge@123
     volumes:
       # - ./mysql/my.cnf:/etc/mysql/my.cnf
-      - ./steve_init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./db_data/:/var/lib/mysql
     networks:
       - steve-db-network
